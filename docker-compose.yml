@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  myapp:
+    build: 
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "2000:2000"
+      
+      
+    
