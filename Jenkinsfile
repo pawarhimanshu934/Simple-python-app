@@ -1,11 +1,14 @@
+@Library('shared-library') _
 pipeline{
     agent { label 'bird'}
     
     stages{
         stage('Code'){
             steps{
-                git url: "https://github.com/pawarhimanshu934/Simple-python-app.git", branch:"main"
-                echo "Code clone success"
+                script{
+                    clone("https://github.com/pawarhimanshu934/Simple-python-app.git","main")
+                }
+                // echo "Code clone success (Jenkins)"
             }
         }
         stage('Build'){
